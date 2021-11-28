@@ -27,6 +27,10 @@ public class ExampleSubsystem extends Subsystem {
         aux.follow(main);
     }
 
+    /**
+     * Set the power output of the motor.
+     * @param power the output of the motor in percent [-1, 1].
+     */
     public void setPower(double power) {
         main.set(power);
     }
