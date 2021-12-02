@@ -1,32 +1,32 @@
 package frc.robot.subsystems.example.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.subsystems.example.ExampleSubsystem;
 
-public class ExampleCommand extends Command {
+public class ExampleCommand extends CommandBase {
     private final ExampleSubsystem exampleSubsystem;
 
     public ExampleCommand(ExampleSubsystem exampleSubsystem) {
         this.exampleSubsystem = exampleSubsystem;
+        addRequirements(exampleSubsystem);
     }
 
     @Override
-    protected void initialize() {
+    public void initialize() {
         exampleSubsystem.setPower(Constants.ExampleSubsystem.POWER);
     }
 
     @Override
-    protected void execute() {
-    }
+    public void execute() {}
 
     @Override
-    protected void end() {
-        exampleSubsystem.setPower(0);
-    }
-
-    @Override
-    protected boolean isFinished() {
+    public boolean isFinished() {
         return false;
+    }
+
+    @Override
+    public void end(boolean interrupted) {
+        exampleSubsystem.setPower(0);
     }
 }

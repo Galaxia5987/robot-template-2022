@@ -2,11 +2,11 @@ package frc.robot.subsystems.example;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Ports;
 
 
-public class ExampleSubsystem extends Subsystem {
+public class ExampleSubsystem extends SubsystemBase {
     private final WPI_TalonFX main = new WPI_TalonFX(Ports.ExampleSubsystem.MAIN);
     private final WPI_TalonSRX aux = new WPI_TalonSRX(Ports.ExampleSubsystem.AUX);
 
@@ -35,8 +35,4 @@ public class ExampleSubsystem extends Subsystem {
         main.set(power);
     }
 
-    @Override
-    protected void initDefaultCommand() {
-
-    }
 }
