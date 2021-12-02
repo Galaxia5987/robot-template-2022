@@ -7,9 +7,11 @@ import frc.robot.Ports;
 
 
 public class ExampleSubsystem extends SubsystemBase {
+    // create fields here
     private final WPI_TalonFX main = new WPI_TalonFX(Ports.ExampleSubsystem.MAIN);
     private final WPI_TalonSRX aux = new WPI_TalonSRX(Ports.ExampleSubsystem.AUX);
 
+    // instantiate the subsystem here
     private final static ExampleSubsystem INSTANCE = new ExampleSubsystem();
 
     public static ExampleSubsystem getInstance() {
