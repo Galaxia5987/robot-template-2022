@@ -1,6 +1,6 @@
 robot-template-2022
 
-This repo utilizes the new Wpilib libraries, a few things have changed including the CTRE classes, simulations, and frc characterization.
+This repo utilizes the new WPILib libraries, a few things have changed including the CTRE classes, simulations, and frc characterization.
 To see the full list click [here](https://docs.wpilib.org/en/stable/docs/yearly-overview/yearly-changelog.html).
 
 Refer to the following links for some helpful code practices:
