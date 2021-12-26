@@ -11,12 +11,7 @@ public class ExampleSubsystem extends SubsystemBase {
     private final WPI_TalonFX main = new WPI_TalonFX(Ports.ExampleSubsystem.MAIN);
     private final WPI_TalonSRX aux = new WPI_TalonSRX(Ports.ExampleSubsystem.AUX);
 
-    // instantiate the subsystem here
-    private final static ExampleSubsystem INSTANCE = new ExampleSubsystem();
-
-    public static ExampleSubsystem getInstance() {
-        return INSTANCE;
-    }
+    private static ExampleSubsystem INSTANCE = null;
 
     private ExampleSubsystem() {
         // motor and sensor inversions
@@ -27,6 +22,17 @@ public class ExampleSubsystem extends SubsystemBase {
 
         // follow
         aux.follow(main);
+    }
+
+    /**
+     * lazy instantiation
+     * @return the subsystem instance
+     */
+    public static ExampleSubsystem getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new ExampleSubsystem();
+        }
+        return INSTANCE;
     }
 
     /**
