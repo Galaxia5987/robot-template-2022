@@ -17,8 +17,10 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  * project.
  */
 public class Robot extends TimedRobot {
+    public static boolean debug = false;
     public static final AHRS navx = new AHRS(SPI.Port.kMXP);
     public PowerDistributionPanel pdp = new PowerDistributionPanel();
+    private Compressor compressor = new Compressor();
     private RobotContainer m_robotContainer;
     private Command m_autonomousCommand;
 
@@ -29,6 +31,7 @@ public class Robot extends TimedRobot {
     @Override
     public void robotInit() {
         m_robotContainer = new RobotContainer();
+        compressor.start();
     }
 
     /**
